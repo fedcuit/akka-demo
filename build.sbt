@@ -1,4 +1,4 @@
-name := "Akka demo "
+name := "Akka demo"
 
 version := "1.0"
 

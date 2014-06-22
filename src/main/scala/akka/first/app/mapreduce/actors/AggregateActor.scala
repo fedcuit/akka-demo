@@ -7,7 +7,7 @@ import scala.collection.mutable
 
 class AggregateActor(masterActor: ActorRef) extends Actor {
 
-  private val finalMapReduce: mutable.HashMap[String, Int] = new mutable.HashMap[String, Int]
+  private val finalMapReduce: mutable.Map[String, Int] = new mutable.HashMap[String, Int]
 
   def aggregate(reduceData: ReduceData) {
     for ((key, value) <- reduceData.reduceDataMap) {

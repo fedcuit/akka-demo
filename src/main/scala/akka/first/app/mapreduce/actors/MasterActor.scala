@@ -14,6 +14,6 @@ class MasterActor extends Actor {
   override def receive: Receive = {
     case msg: String => mapActor ! msg
     case result: Result => aggregateActor ! result
-    case finalMapReduce: mutable.HashMap[String, Int] => println(finalMapReduce)
+    case finalMapReduce: mutable.Map[String, Int] => println(finalMapReduce)
   }
 }

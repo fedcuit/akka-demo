@@ -13,5 +13,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" % "akka-slf4j_2.10" % "2.3.3",
   "com.typesafe.akka" % "akka-remote_2.10" % "2.3.3",
   "com.typesafe.akka" % "akka-agent_2.10" % "2.3.3",
-  "com.typesafe.akka" % "akka-testkit_2.10" % "2.3.3"
+  "com.typesafe.akka" % "akka-testkit_2.10" % "2.3.3",
+  "org.scalatest" % "scalatest_2.10" % "2.2.0" % "test"
 )

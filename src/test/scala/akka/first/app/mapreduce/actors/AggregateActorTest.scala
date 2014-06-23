@@ -23,7 +23,7 @@ class AggregateActorTest extends TestKit(ActorSystem("AggregateActor")) with Fun
         aggregateActor ! ReduceData(HashMap("dog" -> 2, "fox" -> 1))
 
         aggregateActor ! new Result()
-        expectMsg(collection.mutable.HashMap("dog" -> 6, "jump" -> 1, "fox" -> 3))
+        expectMsg(HashMap("dog" -> 6, "jump" -> 1, "fox" -> 3).toMap)
       }
     }
   }

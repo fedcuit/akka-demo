@@ -4,8 +4,6 @@ import akka.actor.{Actor, Props}
 import akka.first.app.mapreduce.Result
 import akka.routing.RoundRobinPool
 
-import scala.collection.mutable
-
 class MasterActor extends Actor {
   val aggregateActor = context.actorOf(Props(new AggregateActor(self)), "aggregate")
   val reduceActor = context.actorOf(Props(new ReduceActor(aggregateActor)), "reduce")
@@ -14,6 +12,6 @@ class MasterActor extends Actor {
   override def receive: Receive = {
     case msg: String => mapActor ! msg
     case result: Result => aggregateActor ! result
-    case finalMapReduce: mutable.Map[String, Int] => println(finalMapReduce)
+    case finalMapReduce: Map[String, Int] => println(finalMapReduce)
   }
 }

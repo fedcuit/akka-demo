@@ -21,6 +21,6 @@ class AggregateActor(masterActor: ActorRef) extends Actor {
 
   override def receive: Receive = {
     case reduceData: ReduceData => aggregate(reduceData)
-    case result: Result => masterActor ! finalMapReduce
+    case result: Result => masterActor ! finalMapReduce.toMap
   }
 }
